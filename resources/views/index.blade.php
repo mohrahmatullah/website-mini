@@ -11,38 +11,47 @@
     <title>Website mini</title>
   </head>
   <body>
+    @if (Session::has('success-message'))
+      <div class="alert alert-success alert-bean">
+        {{ Session::get('success-message') }}
+      </div>
+    @endif
     <div class="container">
         <div class="row">
             <div class="col-6">
-                <form>
+                <form action="" method="POST" enctype="multipart/form-data">
+                    @csrf
                   <div class="form-group">
-                    <label for="exampleFormControlInput1">Email address</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" class="form-control" value="{{ old('email') }}">
+                    @if(!empty($errors->first('email')))
+                    <p class="text-red"><i class="icon fa fa-ban"></i> {{ $errors->first('email') }}</p>
+                    @endif
                   </div>
                   <div class="form-group">
-                    <label for="exampleFormControlSelect1">Example select</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                    </select>
+                    <label for="nama">Nama</label>
+                    <input type="text" name="nama" class="form-control" value="{{ old('nama') }}">
+                    @if(!empty($errors->first('nama')))
+                    <p class="text-red"><i class="icon fa fa-ban"></i> {{ $errors->first('nama') }}</p>
+                    @endif
                   </div>
                   <div class="form-group">
-                    <label for="exampleFormControlSelect2">Example multiple select</label>
-                    <select multiple class="form-control" id="exampleFormControlSelect2">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                    </select>
+                    <label for="nohp">No HP</label>
+                    <input type="text" name="nohp" class="form-control" value="{{ old('nohp') }}">
+                    @if(!empty($errors->first('nohp')))
+                    <p class="text-red"><i class="icon fa fa-ban"></i> {{ $errors->first('nohp') }}</p>
+                    @endif
                   </div>
                   <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Example textarea</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <label for="alamat">Alamat</label>
+                    <input type="text" name="alamat" class="form-control" value="{{ old('alamat') }}">
+                    @if(!empty($errors->first('alamat')))
+                    <p class="text-red"><i class="icon fa fa-ban"></i> {{ $errors->first('alamat') }}</p>
+                    @endif
                   </div>
+                    <div class="card-footer">
+                      <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
                 </form>
             </div>
             <div class="col-6">
@@ -52,8 +61,8 @@
                       <th scope="col">#</th>
                       <th scope="col">email</th>
                       <th scope="col">Nama</th>
-                      <th scope="col">nohp</th>
-                      <th scope="col">alamat</th>
+                      <th scope="col">No HP</th>
+                      <th scope="col">Alamat</th>
                     </tr>
                   </thead>
                   <tbody>

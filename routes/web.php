@@ -16,3 +16,4 @@
 // });
 
 Route::get('/', 'HomeController@index')->name('/');
+Route::post('/', 'HomeController@saveIndex')->name('/');
