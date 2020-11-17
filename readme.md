@@ -7,14 +7,14 @@ How To Install this Project
 
 2. Langkah-Langkah
 	- git clone https://github.com/mohrahmatullah/website-mini.git Melalui terminal,
-	- Masuk ke direktori cms-indocyber-test melalui terminal dengan perintah cd cms-indocyber-test.
+	- Masuk ke direktori website-mini melalui terminal dengan perintah cd website-mini.
 	- (Sesuai petunjuk installasi) Pada terminal, berikan perintah composer install. Ini perlu koneksi internet.
 	- Composer akan menginstall dependency paket dari source code tersebut hingga selesai.
 	- Jalankan perintah php artisan, untuk menguji apakah perintah artisan Laravel bekerja.
 	- Buat database baru (kosong) pada mysql (via phpmyadmin) dengan nama laravel.
 	- Duplikat file .env.example, lalu rename menjadi .env.
 	- Kembali ke terminal, php artisan key:generate.
-	- Setting koneksi database di file .env (DB_DATABASE, DB_USERNAME, DB_PASSWORD) dan tambah kan (URL_MEDIA) ini untuk url image 
+	- Setting koneksi database di file .env (DB_DATABASE, DB_USERNAME, DB_PASSWORD)
 
 		URL_MEDIA=http://127.0.0.1:8000
 
