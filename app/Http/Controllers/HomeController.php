@@ -18,7 +18,7 @@ class HomeController extends Controller
     {
         $data = $request->all();
         // dd($data);
-        $rules =  ['email'  => 'required|email' ,'nama' => 'required', 'nohp'  => 'required|numeric' ,'alamat' => 'required'];
+        $rules =  ['email'  => 'required|email|unique:users,email' ,'nama' => 'required', 'nohp'  => 'required|numeric' ,'alamat' => 'required'];
         $atributname = [
           'email.required' => 'Field is required.'
         ];
